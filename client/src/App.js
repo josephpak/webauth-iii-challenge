@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { GlobalStyle } from "./components/styles/Global";
 
 // Display Components
+import Header from "./components/Header"
 import UsersList from "./components/UsersList";
 
 // Auth Components
@@ -18,7 +19,7 @@ class App extends Component {
     return (
       <>
         <GlobalStyle />
-        This is the application
+        <Header />
         <Switch>
 					<Route exact path="/" component={UsersList} />
 
