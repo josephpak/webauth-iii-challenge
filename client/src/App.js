@@ -20,10 +20,10 @@ class App extends Component {
         <GlobalStyle />
         This is the application
         <Switch>
-					<Route exact path="/users" component={UsersList} />
+					<Route exact path="/" component={UsersList} />
 
-					<Route path="/login" exact component={Login} />
-					<Route path="/register" exact component={Register} />
+					<Route exact path="/login" component={Login} />
+					<Route exact path="/register" component={Register} />
 					<Route component={NotFound} />
 				</Switch>
       </>
