@@ -7,7 +7,8 @@ export default class UsersList extends Component {
   }  
 
   componentDidMount() {
-      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjozLCJ1c2VybmFtZSI6IlRlbGxlciIsImRlcGFydG1lbnQiOiJNYXJrZXRpbmciLCJpYXQiOjE1NTQzMTkyMTMsImV4cCI6MTU1NDQwNTYxM30.W6VQisT8Iy2CiN2LfU4dAB4exyJp7vkb94mzKaSkM3w" 
+      const token = localStorage.getItem("token")
+      console.log(token)
 
       axios.get('http://localhost:5500/api/users/',
         {
@@ -16,7 +17,6 @@ export default class UsersList extends Component {
         }
       )
         .then(res => {
-            console.log(res)
             this.setState({
                 users: res.data
             })    

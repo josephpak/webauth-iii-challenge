@@ -1,12 +1,32 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 
-export default function Register() {
+export default function Register(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('') 
+    const [department, setDepartment] = useState('') 
+
+    if (localStorage.getItem("token")) {
+        props.history.push('/')
+    }
+
+    const registerUser = e => {
+        const user = {
+            username,
+            password,
+            department
+        }
+        e.preventDefault()
+        axios
+            .post('http://localhost:5500/api/auth/register', user)
+            .then(res => {
+                props.history.push("/login")
+            })
+    }
 
     return (
         <div>
-            <form>
+            <form onSubmit={registerUser}>
                 <input
                 type="text"
                 placeholder="Enter Username"
@@ -21,6 +41,16 @@ export default function Register() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 />
+                <input
+                type="text"
+                placeholder="Enter a Department"
+                name="department"
+                value={department}
+                onChange={e => setDepartment(e.target.value)}
+                />
+                <button
+                type="submit"
+                >Submit</button>
             </form>
         </div>
     )
