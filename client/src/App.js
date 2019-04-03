@@ -19,10 +19,10 @@ class App extends Component {
     return (
       <>
         <GlobalStyle />
-        <Header />
-        <Switch>
-					<Route exact path="/" component={UsersList} />
+        <Header history={this.props.history}/>
 
+        <Switch>
+          <Route exact path="/" component={UsersList} />
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/register" component={Register} />
 					<Route component={NotFound} />
