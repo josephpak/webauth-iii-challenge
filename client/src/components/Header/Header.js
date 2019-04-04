@@ -1,13 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
-import Register from "./Register"
+import Register from "../Register/Register"
 
-const HeaderWrapper = styled.header`
-    display: flex;
-    justify-content: flex-end;
-`
+import {
+    HeaderWrapper
+} from "./HeaderStyles"
 
 export default function Header(props) {
   const token = localStorage.getItem("token")
@@ -32,7 +30,7 @@ export default function Header(props) {
             :
             <>
                 <Link
-                    to="/users"
+                    to="/"
                 >
                 Users</Link>  
                 <button 

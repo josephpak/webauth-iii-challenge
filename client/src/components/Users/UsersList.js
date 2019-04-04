@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import {
+  ListWrapper
+} from "./UsersStyles"
+
 export default class UsersList extends Component {
   state = {
       users: []
@@ -28,14 +32,14 @@ export default class UsersList extends Component {
 
   render() {
     return (
-      <div>
+      <ListWrapper>
         {this.state.users ? 
             this.state.users.map(user => (
                 <h1>{user.username}</h1>
             ))
         : "None!"
         }
-      </div>
+      </ListWrapper>
     )
   }
 }

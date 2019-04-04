@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
+import {
+    Form,
+    FormWrapper
+} from "./LoginStyles"
+
 export default function Login(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -28,8 +33,9 @@ export default function Login(props) {
     }
 
     return (
-        <div>
-            <form onSubmit={loginUser}>
+        <FormWrapper>
+            <Form onSubmit={loginUser}>
+                <h1>Login</h1>
                 <input
                 type="text"
                 placeholder="Enter Username"
@@ -47,7 +53,7 @@ export default function Login(props) {
                 <button
                 type="submit"
                 >Login</button>
-            </form>
-        </div>
+            </Form>
+        </FormWrapper>
     )
 }

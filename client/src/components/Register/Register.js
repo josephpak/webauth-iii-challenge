@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 
+import {
+    Form,
+    FormWrapper
+} from "./RegisterStyles"
+
 export default function Register(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('') 
@@ -25,8 +30,9 @@ export default function Register(props) {
     }
 
     return (
-        <div>
-            <form onSubmit={registerUser}>
+        <FormWrapper>
+            <Form onSubmit={registerUser}>
+                <h1>Register</h1>
                 <input
                 type="text"
                 placeholder="Enter Username"
@@ -51,8 +57,8 @@ export default function Register(props) {
                 <button
                 type="submit"
                 >Submit</button>
-            </form>
-        </div>
+            </Form>
+        </FormWrapper>
     )
 }
 

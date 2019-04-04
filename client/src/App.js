@@ -4,12 +4,12 @@ import { Route, Switch } from "react-router-dom";
 import { GlobalStyle } from "./components/styles/Global";
 
 // Display Components
-import Header from "./components/Header"
-import UsersList from "./components/UsersList";
+import Header from "./components/Header/Header"
+import UsersList from "./components/Users/UsersList";
 
 // Auth Components
-import Register from "./components/Register";
-import Login from "./components/Login";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 
 // Miscellaneous Components
 import NotFound from "./components/NotFound";
