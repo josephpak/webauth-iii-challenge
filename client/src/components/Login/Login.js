@@ -18,11 +18,9 @@ export default function Login(props) {
         }
         axios
             .post(
-                'http://localhost:5500/api/auth/login',
-                creds
+                'http://localhost:5500/api/auth/login', creds
             )
             .then(res => {
-                console.log(res)
                 localStorage.setItem("token", res.data.token)
                 props.history.push("/")
             })

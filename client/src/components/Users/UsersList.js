@@ -1,25 +1,20 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import requiresAuth from "../requiresAuth"
+
 import {
   ListWrapper
 } from "./UsersStyles"
 
-export default class UsersList extends Component {
+class UsersList extends Component {
   state = {
       users: []
   }  
 
   componentDidMount() {
       const token = localStorage.getItem("token")
-      console.log(token)
-
-      axios.get('http://localhost:5500/api/users/',
-        {
-            "Content-Type": "application/json",
-            headers: { authorization: token }
-        }
-      )
+      axios.get('/users/')
         .then(res => {
             this.setState({
                 users: res.data
@@ -34,8 +29,10 @@ export default class UsersList extends Component {
     return (
       <ListWrapper>
         {this.state.users ? 
-            this.state.users.map(user => (
-                <h1>{user.username}</h1>
+            this.state.users.map((user, i) => (
+                <h1
+                key={i}
+                >{user.username}</h1>
             ))
         : "None!"
         }
@@ -43,4 +40,6 @@ export default class UsersList extends Component {
     )
   }
 }
+
+export default requiresAuth(UsersList)
 
