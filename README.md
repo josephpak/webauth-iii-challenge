@@ -13,9 +13,9 @@ In this project we'll implement a full authentication workflow (register/login/l
 
 ### Download Project Files
 
-- **Fork** and **Clone** this repository.
-- **CD into the folder** where you cloned the repository.
-- Do your magic!
+- [x] **Fork** and **Clone** this repository.
+- [x] **CD into the folder** where you cloned the repository.
+- [x] Do your magic!
 
 ## Assignment
 
@@ -23,9 +23,9 @@ This project has two parts, you will work on it over two days in the full time c
 
 **Part one**
 
-- Use Node.js, Express and Knex to build an API that provides _Authentication_ functionality using SQLite to store _User_ information. **The user schema should include: username, password and department**. The department should be a string used to group the users. No need for a _departments_ table or setting up relationships.
-- Use **JSON Web Tokens** to keep users authenticated across requests.
-- Design and build the following endpoints.
+- [x] Use Node.js, Express and Knex to build an API that provides _Authentication_ functionality using SQLite to store _User_ information. **The user schema should include: username, password and department**. The department should be a string used to group the users. No need for a _departments_ table or setting up relationships.
+- [x] Use **JSON Web Tokens** to keep users authenticated across requests.
+- [x] Design and build the following endpoints.
 
 #### Endpoints
 
@@ -38,11 +38,11 @@ This project has two parts, you will work on it over two days in the full time c
 **Part two**
 
 - implement a React client:
-  - use `create-react-app` to generate a application to server as the client for the Web API.
-  - inside the React application add **client-side routes** and components for `signup`, `signin` and showing the `list of users` stored in the database.
-  - the `/signup` route should provide a form to gather `username`, `password` and `department` for the user and make a `POST` request to the `/api/register` route on the API. If the user is created successfully, take the returned token, save it to the browser's local storage and redirect the user to the `/users` route, where they should see the list of users.
-  - the `/signin` route should provide a form to gather `username` and `password` for the user and make a `POST` request to the `/api/login` route on the API. Upon successful login, persist the returned token to the browser's local storage and redirect the user to the `/users` route.
-  - the `/users` route should read the token from local storage and make a `GET` request to the `/api/users` route on the API attaching the token as the value of the `Authorization` header.
+  - [x] use `create-react-app` to generate a application to server as the client for the Web API.
+  - [x] inside the React application add **client-side routes** and components for `signup`, `signin` and showing the `list of users` stored in the database.
+  - [x] the `/signup` route should provide a form to gather `username`, `password` and `department` for the user and make a `POST` request to the `/api/register` route on the API. If the user is created successfully, take the returned token, save it to the browser's local storage and redirect the user to the `/users` route, where they should see the list of users.
+  - [x] the `/signin` route should provide a form to gather `username` and `password` for the user and make a `POST` request to the `/api/login` route on the API. Upon successful login, persist the returned token to the browser's local storage and redirect the user to the `/users` route.
+  - [x] the `/users` route should read the token from local storage and make a `GET` request to the `/api/users` route on the API attaching the token as the value of the `Authorization` header.
   - provide a button to `sign out` that will remove the token from local storage.
 
 ## Stretch Problem
